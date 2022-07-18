@@ -4,15 +4,15 @@ class CommentsController < ApplicationController
   
   def create 
     @article.comments.create(comment_params.to_h.merge!({user_id: current_user.id}))
-    redirect_to article_path(@article), notice: 'Comment was successfully created'
+    redirect_to article_path(@article), notice: t('app.create.success', model: Comment.model_name.human)
   end
-
+  
   def destroy
     comment = @article.comments.find(params[:id])
     authorize comment
 
     comment.destroy
-    redirect_to article_path(@article), notice: 'Comment was successfully deleted'
+    redirect_to article_path(@article), notice: t('app.destroy.success', model: Comment.model_name.human)
   end
   
   private
