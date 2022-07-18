@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'articles#index'
-  
-  resources :articles do
-    resources :comments, only: %i[create destroy]
-  end
+  scope '(:locale)', locale: /pt-BR|en/ do
+    devise_for :users
+    root 'articles#index'
+    
+    resources :articles do
+      resources :comments, only: %i[create destroy]
+    end
 
-  resources :categories, except: [:show]
+    resources :categories, except: [:show]
+  end
 end

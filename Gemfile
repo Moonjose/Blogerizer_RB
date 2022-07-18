@@ -9,8 +9,8 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
-
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'exception_notification', '~> 4.4', '>= 4.4.3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -40,3 +40,4 @@ gem "pundit", "~> 2.2"
 gem 'rolify', '~> 6.0'
 gem "groupdate", "~> 6.1"
 gem 'pg', '~> 1.4', '>= 1.4.1', group: :production
+gem 'devise-i18n'
