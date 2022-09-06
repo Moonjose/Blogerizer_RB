@@ -1,85 +1,31 @@
-# Blogerizer
+# Funcionalidades do projeto (PT-BR)
 
-Building a blog using Bootstrap 5 with Ruby on Rails 6 in MVC pattern.
+* Crie uma conta para poder comentar os posts
 
-<table>
-  <tr>
-    <td>Ruby version</td>
-    <td>
-      3.0.2
-    </td>
-  </tr>
-  <tr>
-    <td>Rails version</td>
-    <td>
-      6.1.6
-    </td>
-  </tr>
-  <tr>
-    <td>Database</td>
-    <td>
-      SQLite3 (dev) / PostgreSQL (prod)
-    </td>
-  </tr>
-</table>
+* Suporte a internacionalização
 
-## Initial settings to run the project
+* Paginação de posts
 
-```bash
-# clone the project
-git clone https://github.com/Moonjose/Blogerizer_RB.git
+* Arquivados por período na direita
 
-# enter the cloned directory
-cd Blogerizer_RB
+* Artigos separados por categorias
 
-# install Ruby on Rails dependencies
-bundle install
+* Para criar um artigo é necessario estar logado como administrador
 
-# install Node dependencies
-yarn install
+* Caso queira testar as funcionalidades de admin, clone o projeto na sua máquina e crie um usuário com admin=true
 
-# create the development and test databases
-rails db:create
+# Project features (EN)
 
-# create the tables
-rails db:migrate
+* Create an account to be able to comment on posts
 
-# run the project
-rails s
-```
+* I18n support
 
-Open the browser at the address `http://localhost:3000`
+* Pagination
 
-## Configuration for Production
+* Archived by period on the right
 
-```bash
-# delete the config/credentials.yml.enc file
-rm config/credentials.yml.enc
+* Articles separated by categories
 
-# run the command to create credentials and master key (replace 'code' if you don't use VS Code)
-EDITOR="code --wait" bin/rails credentials:edit
-```
+* To create an article, you must be logged in as an admin.
 
-Add the information below in the [credentials](https://guides.rubyonrails.org/security.html#custom-credentials) to configure the email used by the Devise
-gem (replace with the values ​​you want):
-
-```yml
-# ... your content above
-
-gmail:
-  mailer_sender: 'Sender <your@email.com>'
-  user_name: your@email.com
-  password: your_password
-
-exception_recipients: exceptions@example.com
-```
-
-Save and close the `config/credentials.yml.enc` file.
-
-If you want to use another email provider, change it in the file
-`config/environments/production.rb`.
-
-To configure [Exception Notification](https://github.com/smartinez87/exception_notification), change it in the file
-`config/initializers/exception_notification.rb`.
-
-Open the browser at the address [https://blogerizer.herokuapp.com](https://blogerizer.herokuapp.com)
+* If you want to test the admin functionality, clone the project on your machine and create a user with admin=true
